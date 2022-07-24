@@ -9,7 +9,6 @@ export function useForm<T>(inputs: T, onChangeFunc?:(event: ChangeEvent<any>, st
         setInputsState((oldState)=>{
             const newState: T = onChangeFunc? onChangeFunc(event, oldState):{...oldState}
             newState[event.target.name as keyof T] = event.target.value;
-            console.log(newState);
             return newState;
         })    
     }
